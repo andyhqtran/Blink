@@ -1,0 +1,43 @@
+{
+  "name": "Blink",
+  "version": "0.0.1",
+  "homepage": "https://github.com/andyhqtran/Blink",
+  "authors": [
+    "Andy Tran <hello@andytran.me> (http://andytran.me/)"
+  ],
+  "description": "Blink is a multi-purpose WordPress Theme.",
+  "main": "index.php",
+  "keywords": [
+    "blink",
+    "wordpress",
+    "theme",
+    "sass",
+    "scss",
+    "php",
+    "responsive",
+    "web",
+    "mobile",
+    "jade",
+    "html",
+    "css",
+    "css3",
+    "html5",
+    "builder",
+    "mutli-purpose"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.4.0",
+    "masonry": "~3.3.2"
+  },
+  "devDependencies": {
+    "jquery": "~2.1.4"
+  }
+}

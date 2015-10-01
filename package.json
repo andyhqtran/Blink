@@ -1,0 +1,67 @@
+{
+  "name": "blink",
+  "version": "0.0.1",
+  "description": "Blink is a multi-purpose WordPress Theme.",
+  "contributors": [
+    {
+      "name": "Andy Tran",
+      "email": "hello@andytran.me",
+      "url": "http://andytran.me"
+    },
+    {
+      "name": "Fikri Rasrid",
+      "email": "",
+      "url": "http://fikrirasyid.com/"
+    }
+  ],
+  "license": "MIT",
+  "main": "index.php",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node_modules/.bin/bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyhqtran/Blink.git"
+  },
+  "homepage": "https://github.com/andyhqtran/Blink#readme",
+  "bugs": {
+    "url": "https://github.com/andyhqtran/Blink/issues"
+  },
+  "keywords": [
+    "blink",
+    "wordpress",
+    "theme",
+    "sass",
+    "scss",
+    "php",
+    "responsive",
+    "web",
+    "mobile",
+    "jade",
+    "html",
+    "css",
+    "css3",
+    "html5",
+    "builder",
+    "mutli-purpose"
+  ],
+  "dependencies": {
+    "bower": "^1.5.3",
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-jade": "^0.15.0",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-notify": "^0.4.1",
+    "grunt-postcss": "^0.6.0",
+    "load-grunt-tasks": "^3.3.0"
+  }
+}
