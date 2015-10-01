@@ -18,8 +18,9 @@ module.exports = function (grunt) {
 
     // Clean
     clean: {
-      css: '*.css',
-      html: '*.html',
+      css: ['{,*/,*/*/,*/*/*/}*.css', '{,*/,*/*/,*/*/*/}*.map'],
+      html: '{,*/,*/*/,*/*/*/}*.html',
+      cache: '.sass-cache',
       bower: 'bower_components',
       npm: 'node_modules'
     },
@@ -43,6 +44,37 @@ module.exports = function (grunt) {
       }
     },
 
+    // Sass
+    sass: {
+      options: {
+        precision: 6,
+        sourcemap: 'auto',
+        style: 'expanded',
+        trace: true
+      },
+      dev: {
+        files: {
+          'style.css': 'scss/main.{scss, sass}',
+        }
+      }
+    },
+
+    // Postcss
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')({
+            browsers: ['last 2 version', 'ie 8']
+          })
+        ]
+      },
+      dev: {
+        src: 'style.css'
+      }
+    },
+
+    // Notify
     notify: {
       options: {
         title: 'Grunt'
@@ -73,6 +105,7 @@ module.exports = function (grunt) {
       }
     },
 
+    // Watch
     watch: {
       options: {
         livereload: true,
@@ -95,8 +128,14 @@ module.exports = function (grunt) {
       // Jade
       jade: {
         files: '{,*/,*/*/,*/*/*/}*.jade',
-        tasks: ['jade']
+        tasks: ['jade', 'notify:jade']
       },
+
+      // Sass
+      sass: {
+        files: '{,*/,*/*/,*/*/*/}*.{scss,sass}',
+        tasks: ['sass', 'postcss', 'notify:sass']
+      }
     }
   });
 
