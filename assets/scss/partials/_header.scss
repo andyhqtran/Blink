@@ -1,7 +1,40 @@
 .header {
+  background: transparent;
+
+  // Fixed Header
+  &--fixed {
+    background: $header-background;
+  }
+
+  // Column
+  .col {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   // Logo
-  &__logo {}
+  &__logo {
+    max-height: 48px;
+
+    img {
+      display: block;
+      height: 100%;
+    }
+  }
 
   // Nav
-  &__nav {}
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  // Link
+  &__link {
+    // Active
+    &--active {}
+  }
 }

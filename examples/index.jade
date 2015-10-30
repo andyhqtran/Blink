@@ -8,5 +8,28 @@ html
   //- Body
   body
 
+    // Header
+    header(class='header')
+
+      // Container
+      +container: +row: +col(4)
+
+        // Header Logo
+        div(class='header__logo')
+          img(src='../assets/img/logo.png')
+
+        // Header Nav
+        ul(class='header__nav')
+          li: a(class='header__link header__link--active'
+                href='#') Home
+          li: a(class='header__link'
+                href='#') Benefits
+          li: a(class='header__link'
+                href='#') Pricing
+          li: a(class='header__link'
+                href='#') Pages
+          li: a(class='header__link'
+                href='#') Blog
+
   //- Footer
   include lib/footer.tpl.jade
