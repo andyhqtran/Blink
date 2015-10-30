@@ -51,14 +51,13 @@ module.exports = function (grunt) {
     },
 
     sass: {
-      options: {
-        precision: 6,
-        sourcemap: 'auto',
-        style: 'expanded',
-        trace: true
-      },
-
       dev: {
+        options: {
+          precision: 6,
+          sourcemap: 'auto',
+          style: 'expanded',
+          trace: true
+        },
         files: {
           'style.css': 'assets/scss/main.{scss, sass}',
         }
@@ -73,7 +72,7 @@ module.exports = function (grunt) {
           noCache: true
         },
         files: {
-          'assets/css/style.css': 'assets/scss/style.scss'
+          'style.css': 'assets/scss/style.scss'
         }
       },
     },
