@@ -6,7 +6,6 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    // Server
     connect: {
       server: {
         options: {
@@ -16,16 +15,23 @@ module.exports = function (grunt) {
       }
     },
 
-    // Clean
     clean: {
-      css: ['{,*/,*/*/,*/*/*/}*.css', '{,*/,*/*/,*/*/*/}*.map'],
-      html: '{,*/,*/*/,*/*/*/}*.html',
-      cache: '.sass-cache',
-      bower: 'bower_components',
-      npm: 'node_modules'
+      release: [
+        'package.json',
+        'bower.json', '.bowerrc',
+        '.gitignore', '.gitmodules',
+        '*.jade', 'examples',
+        'scss', '*.scss', '*.sass', '*.map', '.sass-cache',
+        'Gruntfile.js', 'node_modules',
+      ],
+
+      build: [
+        '.sass-cache',
+        'bower_components', 'components',
+        'node_modules'
+      ]
     },
 
-    // Jade
     jade: {
       options: {
         data: {
@@ -33,6 +39,7 @@ module.exports = function (grunt) {
           pretty: true
         }
       },
+
       dev: {
         files: [{
           cwd: 'examples',
@@ -44,7 +51,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Sass
     sass: {
       options: {
         precision: 6,
@@ -52,6 +58,7 @@ module.exports = function (grunt) {
         style: 'expanded',
         trace: true
       },
+
       dev: {
         files: {
           'style.css': 'scss/main.{scss, sass}',
@@ -59,25 +66,80 @@ module.exports = function (grunt) {
       }
     },
 
-    // Postcss
     postcss: {
-      options: {
-        map: true,
-        processors: [
-          require('autoprefixer')({
-            browsers: ['last 2 version', 'ie 8']
-          })
-        ]
-      },
       dev: {
+        options: {
+          map: true,
+          processors: [
+            require('autoprefixer')({
+              browsers: ['last 2 version']
+            })
+          ]
+        },
+        src: 'style.css'
+      },
+
+      dist: {
+        options: {
+          map: false,
+          processors: [
+            require('autoprefixer')({
+              browsers: ['last 3 version', 'ie 8']
+            })
+          ]
+        },
         src: 'style.css'
       }
     },
 
-    // Notify
+    cssmin: {
+      dist: {
+        options: {
+          sourceMap: false,
+          shorthandCompacting: false,
+          roundingPrecision: -1
+        },
+        files: 'style.css'
+      }
+    },
+
+    wiredep: {
+      dev: {
+        options: {
+          dependencies: true,
+          devDependencies: true,
+          'overrides': {
+            'font-awesome': {
+              'main': [
+                'less/font-awesome.less',
+                'scss/font-awesome.scss',
+                'css/font-awesome.css'
+              ]
+            }
+          }
+        },
+
+        src: [
+          '{,*/,*/*/}*.jade'
+        ],
+      }
+    },
+
     notify: {
       options: {
         title: 'Grunt'
+      },
+
+      build: {
+        options: {
+          message: 'Project has been built.'
+        }
+      },
+
+      release: {
+        options: {
+          message: 'Project has been built & cleaned up.'
+        }
       },
 
       server: {
@@ -102,10 +164,15 @@ module.exports = function (grunt) {
         options: {
           message: 'Sass files has been compiled.'
         }
+      },
+
+      js: {
+        options: {
+          message: 'JavaScript files has been checked.'
+        }
       }
     },
 
-    // Watch
     watch: {
       options: {
         livereload: true,
@@ -116,7 +183,6 @@ module.exports = function (grunt) {
         event: ['all']
       },
 
-      // Gruntfile
       configFiles: {
         files: ['Gruntfile.js'],
         tasks: ['notify:grunt'],
@@ -125,19 +191,19 @@ module.exports = function (grunt) {
         }
       },
 
-      // Jade
       jade: {
         files: '{,*/,*/*/,*/*/*/}*.jade',
-        tasks: ['jade', 'notify:jade']
+        tasks: ['jade:dev', 'wiredep:dev', 'notify:jade']
       },
 
-      // Sass
       sass: {
         files: '{,*/,*/*/,*/*/*/}*.{scss,sass}',
-        tasks: ['sass', 'postcss', 'notify:sass']
+        tasks: ['sass:dev', 'postcss:dev', 'notify:sass']
       }
     }
   });
 
+  grunt.registerTask('release', ['sass:dist', 'postcss:dist', 'cssmin:dist', 'notify:release', 'clean:release']);
+  grunt.registerTask('build', ['jade:dev', 'sass:dev', 'notify:build']);
   grunt.registerTask('default', ['connect:server', 'notify:server', 'watch']);
 };
