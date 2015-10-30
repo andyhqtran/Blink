@@ -1,0 +1,19 @@
+//- Container
+mixin container(fluid)
+  if !fluid
+    div(class='container')
+      block
+  else
+    div(class='container'
+        fluid)
+      block
+
+//- Row
+mixin row
+  div(class='row')
+    block
+
+//- Column
+mixin col(columns)
+  div(class='col-#{columns}')
+    block
