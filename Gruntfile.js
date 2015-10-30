@@ -61,7 +61,7 @@ module.exports = function (grunt) {
 
       dev: {
         files: {
-          'style.css': 'scss/main.{scss, sass}',
+          'style.css': 'assets/scss/main.{scss, sass}',
         }
       }
     },
