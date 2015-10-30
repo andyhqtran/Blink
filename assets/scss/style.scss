@@ -7,8 +7,21 @@
 // ResetCSS
 @import "vendors/_reset";
 
+// Body
+body {
+  background: $background;
+  height: 100%;
+  color: $base-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 // Typography
-@import "vendors/_reset";
+@import "partials/_typography";
 
 // Grid
 @import "partials/_grid";
