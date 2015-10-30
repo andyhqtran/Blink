@@ -32,5 +32,6 @@ nbproject
 .sass-cache
 
 # Folders
+components
 bower_components
 node_modules
