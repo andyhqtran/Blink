@@ -62,7 +62,20 @@ module.exports = function (grunt) {
         files: {
           'style.css': 'assets/scss/main.{scss, sass}',
         }
-      }
+      },
+
+      dist: {
+        options: {
+          precision: 10,
+          sourcemap: 'none',
+          style: 'compact',
+          trace: false,
+          noCache: true
+        },
+        files: {
+          'assets/css/style.css': 'assets/scss/style.scss'
+        }
+      },
     },
 
     postcss: {
