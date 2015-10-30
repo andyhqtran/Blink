@@ -39,5 +39,8 @@
   },
   "devDependencies": {
     "jquery": "~2.1.4"
+  },
+  "resolutions": {
+    "jquery": "~2.1.4"
   }
 }
