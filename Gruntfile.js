@@ -33,14 +33,13 @@ module.exports = function (grunt) {
     },
 
     jade: {
-      options: {
-        data: {
-          debug: true,
-          pretty: true
-        }
-      },
-
       dev: {
+        options: {
+          data: {
+            debug: true,
+            pretty: true
+          }
+        },
         files: [{
           cwd: 'examples',
           src: '*.jade',
