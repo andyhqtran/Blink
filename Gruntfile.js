@@ -59,7 +59,7 @@ module.exports = function (grunt) {
           trace: true
         },
         files: {
-          'style.css': 'assets/scss/main.{scss, sass}',
+          'style.css': 'assets/scss/style.{scss, sass}',
         }
       },
 
