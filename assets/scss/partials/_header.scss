@@ -1,9 +1,29 @@
 .header {
   background: transparent;
+  padding: 40px 0;
 
   // Fixed Header
   &--fixed {
     background: $header-background;
+    box-shadow: 0px 5px 0px 0px rgba($black, 0.04);
+
+    // Header
+    .header {
+      // Link
+      &__link {
+        color: $gray;
+
+        // Hover
+        &:hover {
+          color: $accent;
+        }
+
+        // Active
+        &--active {
+          color: $accent;
+        }
+      }
+    }
   }
 
   // Column
@@ -27,14 +47,64 @@
 
   // Nav
   &__nav {
+    list-style: none;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 0;
+
+    // List Item
+    li {
+      margin: 0;
+    }
   }
 
   // Link
   &__link {
+    position: relative;
+    margin: 0 24px;
+    color: rgba($white, 0.6);
+    font-size: 14px;
+    font-weight: $bold;
+    text-transform: uppercase;
+    transition: 0.4s ease;
+
+    // Hover
+    &:hover {
+      color: $white;
+    }
+
+    // Brackets
+    &::before,
+    &::after {
+      position: absolute;
+      display: inline-block;
+      opacity: 0;
+      transition: 0.4s ease;
+    }
+
+    &::before {
+      content: '[';
+      left: -10px;
+      transform: translateX(20px);
+    }
+
+    &::after {
+      content: ']';
+      right: -10px;
+      transform: translateX(-20px);
+    }
+
     // Active
-    &--active {}
+    &--active {
+      color: $white;
+
+      // Brackets
+      &:before,
+      &:after {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
   }
 }
