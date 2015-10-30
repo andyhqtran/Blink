@@ -26,7 +26,8 @@ module.exports = function (grunt) {
       ],
 
       build: [
-        '.sass-cache',
+        '*.html',
+        '*.css', '*.map', '.sass-cache',
         'bower_components', 'components',
         'node_modules'
       ]
