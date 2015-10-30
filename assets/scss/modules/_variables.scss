@@ -11,26 +11,30 @@ $bold: 700;
 $ultra: 800;
 
 // Colors
-$black: (100: #000000, 80: rgba(0, 0, 0, 0.8), 60: rgba(0, 0, 0, 0.6), 40: rgba(0, 0, 0, 0.4), 20: rgba(0, 0, 0, 0.2), 10: rgba(0, 0, 0, 0.1));
-$white: (100: #FFFFFF, 95: rgba(255, 255, 255, 0.95), 80: rgba(255, 255, 255, 0.8), 60: rgba(255, 255, 255, 0.6), 40: rgba(255, 255, 255, 0.4), 10: rgba(255, 255, 255, 0.1));
+$black: #000000;
+$dark-gray: rgba($black, 0.8);
+$gray: rgba($black, 0.4);
+$light-gray: rgba($black, 0.2);
+$white: #FFFFFF;
 
 // Theme Colors
 $accent: #57CEDB;
 
 // Base Setting
-$base-color: map-get($black, 60);
+$base-color: $gray;
 $base-font-family: $body-font, sans-serif;
 $base-font-size: 14px;
 $base-font-weight: $regular;
 $base-line-height: 1.6em;
 
 // Layout Settings
+$background: darken($white, 5%); // #F2F2F2
 $max-width: 1280px;
 $columns: 4;
 $gutters: 20px;
 
 // Header Settings
-$header-background: map-get($white, 100);
+$header-background: $white;
 
 // Footer Settings
 $footer-background: #5B6269;
