@@ -11,16 +11,8 @@ html
     //- Header
     include lib/header.tpl.jade
 
-    div(class='hero')
-      +container
-        +row: +col(4)
-          div(class='hero__promo')
-            div(class='hero__text')
-              h1(class='hero__title') The <b>true innovation</b> is finally here.
-              h4(class='hero__subtitle') Convenient, yet simple; Complex, yet easy;
-                a(href='#')  Blink.
-            a(class='hero__button'
-              href='#') Get Started Now
+    //- Hero
+    include lib/hero.tpl.jade
 
   //- Footer
   include lib/footer.tpl.jade
