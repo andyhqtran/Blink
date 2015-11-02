@@ -29,6 +29,7 @@
   &__nav {
     list-style: none;
     display: flex;
+    align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0;
@@ -91,7 +92,6 @@
     &--button {
       @extend .btn;
 
-      display: inline;
       color: $accent;
 
       &:hover {

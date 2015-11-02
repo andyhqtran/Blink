@@ -2,7 +2,6 @@
   background: $footer-background;
   color: rgba($white, 0.6);
 
-  // Footer Widget
   &__widget {}
 
   // Footer Title
@@ -30,6 +29,7 @@
   &__nav {
     list-style: none;
     display: flex;
+    align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0;
