@@ -1,2 +1,28 @@
 // Footer
 footer(class='footer')
+
+  // Container
+  +container: +row
+    +col(1)
+
+      // Footer Widget
+
+  // Footer Bottom
+  .footer__bottom
+    +container: +row: +col(4)
+
+      // Footer Nav
+      ul(class='footer__nav')
+        li: a(class='footer__link footer__link--active'
+              href='#') Home
+        li: a(class='footer__link'
+              href='#') Benefits
+        li: a(class='footer__link'
+              href='#') Pricing
+        li: a(class='footer__link'
+              href='#') Pages
+        li: a(class='footer__link'
+              href='#') Blog
+
+      // Copyright
+      .footer__copyright Built by <a href='#'>Andy Tran</a> &middot; Powered by <a href='#'>WordPress</a>

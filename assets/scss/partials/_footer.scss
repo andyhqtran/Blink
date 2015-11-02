@@ -1,0 +1,66 @@
+.footer {
+  background: $footer-background;
+  color: rgba($white, 0.6);
+
+  // Footer Widget
+  &__widget {}
+
+  // Footer Title
+  &__title {
+    color: $white;
+  }
+
+  // Footer Bottom
+  &__bottom {
+    background: rgba($black, 0.1);
+    margin: 40px 0 0 0; // TEMP
+    padding: 40px 0;
+
+    // Column
+    .col {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  // Nav
+  &__nav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+
+    // List Item
+    li {
+      margin: 0;
+    }
+  }
+
+  // Link
+  &__link {
+    position: relative;
+    margin: 0 24px;
+    color: rgba($white, 0.6);
+    font-size: 14px;
+    font-weight: $bold;
+    transition: 0.3s ease;
+
+    // Active
+    &--active {
+      color: $white;
+    }
+  }
+
+  // Copyright
+  &__copyright {
+    font-weight: $bold;
+
+    a {
+      color: $white;
+    }
+  }
+}
