@@ -1,6 +1,42 @@
 .hero {
-  background: $accent;
-  padding: 80px 0;
+  background: url("assets/img/hero/1.png") left bottom no-repeat, $accent url("assets/img/hero/2.png") right bottom no-repeat;
+  padding: 120px 0;
 
-  &--text {}
+  &__promo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__text {}
+
+  &__title {
+    margin: 0 0 24px;
+    color: $white;
+    font-weight: $regular;
+
+    b {
+      color: #E9FFA5;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: rgba($white, 0.8);
+    font-weight: $medium;
+
+    a {
+      color: $white;
+    }
+  }
+
+  &__button {
+    @extend .btn;
+
+    box-shadow: 0 6px 0 rgba($black, 0.04);
+    padding: 24px 40px;
+    font-size: 24px;
+  }
 }
