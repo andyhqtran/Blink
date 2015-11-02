@@ -26,32 +26,18 @@
   }
 
   // Nav
-  &__nav {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0;
+  .nav {
+    // Link
+    &__link {
+      text-transform: none;
 
-    // List Item
-    li {
-      margin: 0;
-    }
-  }
-
-  // Link
-  &__link {
-    position: relative;
-    margin: 0 24px;
-    color: rgba($white, 0.6);
-    font-size: 14px;
-    font-weight: $bold;
-    transition: 0.3s ease;
-
-    // Active
-    &--active {
-      color: $white;
+      // Active
+      &--active {
+        &:before,
+        &:after {
+          display: none;
+        }
+      }
     }
   }
 

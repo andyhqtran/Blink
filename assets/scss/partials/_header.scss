@@ -25,88 +25,13 @@
     }
   }
 
-  // Nav
-  &__nav {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0;
-
-    // List Item
-    li {
-      margin: 0;
-    }
-  }
-
-  // Link
-  &__link {
-    position: relative;
-    margin: 0 24px;
-    color: rgba($white, 0.6);
-    font-size: 14px;
-    font-weight: $bold;
-    text-transform: uppercase;
-    transition: 0.3s ease;
-
-    // Hover
-    &:hover {
-      color: $white;
-    }
-
-    // Brackets
-    &::before,
-    &::after {
-      position: absolute;
-      display: inline-block;
-      opacity: 0;
-      transition: 0.3s ease;
-    }
-
-    &::before {
-      content: '[';
-      left: -10px;
-      transform: translateX(20px);
-    }
-
-    &::after {
-      content: ']';
-      right: -10px;
-      transform: translateX(-20px);
-    }
-
-    // Active
-    &--active {
-      color: $white;
-
-      // Brackets
-      &:before,
-      &:after {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    // Button
-    &--button {
-      @extend .btn;
-
-      color: $accent;
-
-      &:hover {
-        color: $accent;
-      }
-    }
-  }
-
   // Fixed Header
   &--fixed {
     background: $header-background;
     box-shadow: 0px 5px 0px 0px rgba($black, 0.04);
 
     // Header
-    .header {
+    .nav {
       // Link
       &__link {
         color: $gray;
@@ -119,6 +44,16 @@
         // Active
         &--active {
           color: $accent;
+        }
+
+        // Button
+        &--button {
+          background: $accent;
+          color: $white;
+
+          &:hover {
+            color: $white;
+          }
         }
       }
     }
@@ -137,12 +72,12 @@
       &__logo {
         margin: 0 0 ($gutters * 2);
       }
+    }
 
-      // Nav
-      &__nav {
-        width: 100%;
-        justify-content: center;
-      }
+    // Nav
+    .nav {
+      width: 100%;
+      justify-content: center;
     }
   }
 }
