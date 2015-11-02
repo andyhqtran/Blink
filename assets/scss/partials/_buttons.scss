@@ -45,4 +45,12 @@
     padding: 20px 32px;
     font-size: 18px;
   }
+
+  // Back To Top
+  &__to-top {
+    display: none;
+    position: fixed;
+    right: $gutters;
+    bottom: $gutters;
+  }
 }
