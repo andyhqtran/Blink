@@ -35,7 +35,8 @@
   ],
   "dependencies": {
     "font-awesome": "~4.4.0",
-    "masonry": "~3.3.2"
+    "masonry": "~3.3.2",
+    "waypoints": "~4.0.0"
   },
   "devDependencies": {
     "jquery": "~2.1.4"
