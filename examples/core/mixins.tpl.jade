@@ -19,6 +19,13 @@ mixin col(columns)
     block
 
 //- Button
-mixin button(href, type, value)
-  a(class='btn #{type}'
+mixin button(href, classes, value)
+  a(class='btn #{classes}'
     href=href)=value
+
+//- Input
+mixin input(type, classes, name, placeholder)
+  input(class='input #{classes}'
+        type=type
+        name=name
+        placeholder=placeholder)
