@@ -17,3 +17,8 @@ mixin row
 mixin col(columns)
   div(class='col col-#{columns}')
     block
+
+//- Button
+mixin button(href, type, value)
+  a(class='btn #{type}'
+    href=href)=value
